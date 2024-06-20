@@ -97,7 +97,7 @@ Swagger and ReDoc documentation can be accessed at the following URLs:
 
 ### Running Tests
 
-To run the tests, use the following command:
+To run the tests, use the following command (not working correctly):
 
 ```bash
 python manage.py test

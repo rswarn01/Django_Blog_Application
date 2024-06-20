@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/rswarn01/django-blog-application.git
+    git clone https://github.com/rswarn01/Django_Blog_Application.git
     cd django-blog-application
     ```
 

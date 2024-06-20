@@ -7,10 +7,12 @@ from django.contrib.auth.models import User
 from rest_framework.pagination import PageNumberPagination
 
 
+# to get and create post
 class PostListCreateView(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+    # get all the post
     def get_queryset(self):
         return Post.objects.all().order_by("-published_date")
 
@@ -21,6 +23,7 @@ class PostListCreateView(generics.ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
+    # create new post
     @swagger_auto_schema(
         operation_description="Create a new post",
         request_body=PostSerializer,
@@ -38,12 +41,14 @@ class PostRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+    # get a specific post by id
     @swagger_auto_schema(
         operation_description="Retrieve a post by ID", responses={200: PostSerializer}
     )
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
+    # update a post
     @swagger_auto_schema(
         operation_description="Update a post",
         request_body=PostSerializer,
@@ -52,6 +57,7 @@ class PostRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     def put(self, request, *args, **kwargs):
         return super().put(request, *args, **kwargs)
 
+    # delete a post
     @swagger_auto_schema(
         operation_description="Delete a post", responses={204: "No Content"}
     )
@@ -96,6 +102,7 @@ class CommentListCreateView(generics.ListCreateAPIView):
         serializer.save()
 
 
+# create new user
 class UserRegistrationView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer

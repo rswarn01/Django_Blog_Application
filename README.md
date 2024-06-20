@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/django-blog-application.git
+    git clone https://github.com/rswarn01/django-blog-application.git
     cd django-blog-application
     ```
 
@@ -94,6 +94,9 @@ Swagger and ReDoc documentation can be accessed at the following URLs:
 - **Comments:**
   - `GET /api/posts/<post_id>/comments/` (list comments for a post)
   - `POST /api/posts/<post_id>/comments/` (create comment for a post)
+
+###Postman collection
+Added postman collection as well
 
 ### Running Tests
 
